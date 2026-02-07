@@ -1,0 +1,122 @@
+const books = [
+  {
+    id: 1,
+    title: "Filosofi Teras",
+    author: "Henry Manampiring",
+    genre: "Self-Help",
+    year: 2019,
+    pages: 320,
+    price: 98000,
+    rating: 4.9,
+    image: "images/book1.jpg", // Ganti dengan path gambar kamu
+    description: "Sebuah buku yang memperkenalkan filsafat Stoisisme dalam konteks kehidupan modern di Indonesia.",
+  },
+  {
+    id: 2,
+    title: "Laskar Pelangi",
+    author: "Andrea Hirata",
+    genre: "Fiction",
+    year: 2005,
+    pages: 529,
+    price: 85000,
+    rating: 4.8,
+    image: "images/book2.jpg", // Ganti dengan path gambar kamu
+    description: "Kisah persahabatan sepuluh anak di Pulau Belitung yang berjuang untuk mendapatkan pendidikan.",
+  },
+  {
+    id: 3,
+    title: "Sapiens: Riwayat Singkat Umat Manusia",
+    author: "Yuval Noah Harari",
+    genre: "History",
+    year: 2011,
+    pages: 525,
+    price: 150000,
+    rating: 4.7,
+    image: "images/book3.jpg", // Ganti dengan path gambar kamu
+    description: "Menjelajahi sejarah manusia dari zaman batu hingga abad ke-21 melalui perspektif biologi dan sejarah.",
+  },
+  {
+    id: 4,
+    title: "Bumi",
+    author: "Tere Liye",
+    genre: "Sci-Fi",
+    year: 2014,
+    pages: 440,
+    price: 105000,
+    rating: 4.6,
+    image: "images/book4.jpg", // Ganti dengan path gambar kamu
+    description: "Petualangan tiga sahabat di dunia paralel yang penuh dengan teknologi canggih dan kekuatan unik.",
+  },
+  {
+    id: 5,
+    title: "Atomic Habits",
+    author: "James Clear",
+    genre: "Self-Help",
+    year: 2018,
+    pages: 320,
+    price: 125000,
+    rating: 5.0,
+    image: "images/book5.jpg", // Ganti dengan path gambar kamu
+    description: "Cara mudah dan terbukti untuk membangun kebiasaan baik dan menghilangkan kebiasaan buruk.",
+  },
+  {
+    id: 6,
+    title: "Dunia Sophie",
+    author: "Jostein Gaarder",
+    genre: "Fiction",
+    year: 1991,
+    pages: 800,
+    price: 135000,
+    rating: 4.5,
+    image: "images/book6.jpg", // Ganti dengan path gambar kamu
+    description: "Sebuah novel tentang sejarah filsafat yang dikemas dalam cerita misteri seorang gadis remaja.",
+  },
+  {
+    id: 7,
+    title: "The Psychology of Money",
+    author: "Morgan Housel",
+    genre: "Self-Help",
+    year: 2020,
+    pages: 242,
+    price: 95000,
+    rating: 4.9,
+    image: "images/book7.jpg", // Ganti dengan path gambar kamu
+    description: "Pelajaran abadi mengenai kekayaan, ketamakan, dan kebahagiaan melalui perilaku manusia terhadap uang.",
+  },
+  {
+    id: 8,
+    title: "Garis Waktu",
+    author: "Fiersa Besari",
+    genre: "Fiction",
+    year: 2016,
+    pages: 212,
+    price: 75000,
+    rating: 4.4,
+    image: "images/book8.jpg", // Ganti dengan path gambar kamu
+    description: "Kumpulan surat dan catatan yang membentuk sebuah garis waktu tentang pertemuan dan perpisahan.",
+  },
+  {
+    id: 9,
+    title: "A Brief History of Time",
+    author: "Stephen Hawking",
+    genre: "Sci-Fi",
+    year: 1988,
+    pages: 256,
+    price: 110000,
+    rating: 4.7,
+    image: "images/book9.jpg", // Ganti dengan path gambar kamu
+    description: "Penjelasan mengenai asal-usul alam semesta, lubang hitam, dan konsep waktu bagi pembaca awam.",
+  },
+  {
+    id: 10,
+    title: "Pulang",
+    author: "Leila S. Chudori",
+    genre: "History",
+    year: 2012,
+    pages: 464,
+    price: 115000,
+    rating: 4.8,
+    image: "images/book10.jpg", // Ganti dengan path gambar kamu
+    description: "Drama keluarga dengan latar belakang sejarah Indonesia tahun 1965 dan eksil politik di Paris.",
+  }
+];

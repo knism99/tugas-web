@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Perpustakaan Digital - Temukan koleksi buku terbaik dengan berbagai genre">
+  <title>Perpustakaan Digital | Koleksi Buku Terbaik</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-icon">📚</span>
+        <h1>Perpustakaan Digital</h1>
+      </div>
+      <p class="tagline">Temukan dunia dalam setiap halaman</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-container">
+    <!-- Controls Section -->
+    <section class="controls-section">
+      <div class="controls-wrapper">
+        <!-- Filter by Genre -->
+        <div class="control-group">
+          <label for="genre-filter">
+            <span class="control-icon">🏷️</span>
+            Filter Genre
+          </label>
+          <select id="genre-filter">
+            <option value="all">Semua Genre</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Self-Help">Self-Help</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="History">History</option>
+          </select>
+        </div>
+
+        <!-- Sort Options -->
+        <div class="control-group">
+          <label for="sort-option">
+            <span class="control-icon">⬆️</span>
+            Urutkan
+          </label>
+          <select id="sort-option">
+            <option value="title">Judul (A-Z)</option>
+            <option value="year">Tahun Terbit</option>
+            <option value="pages">Jumlah Halaman</option>
+          </select>
+        </div>
+
+        <!-- Book Count -->
+        <div class="book-count">
+          <span id="book-count">0</span> buku ditemukan
+        </div>
+      </div>
+    </section>
+
+    <!-- Books Grid -->
+    <section class="books-section">
+      <div class="books-grid" id="books-grid">
+        <!-- Books will be rendered here by JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Book Preview Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="book-modal">
+      <button class="modal-close" id="modal-close" aria-label="Tutup modal">✕</button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-cover" id="modal-cover">
+            <span class="cover-icon">📖</span>
+          </div>
+          <div class="modal-info">
+            <span class="modal-genre" id="modal-genre"></span>
+            <h2 class="modal-title" id="modal-title"></h2>
+            <p class="modal-author" id="modal-author"></p>
+            <div class="modal-meta">
+              <span class="meta-item">
+                <span class="meta-icon">📅</span>
+                <span id="modal-year"></span>
+              </span>
+              <span class="meta-item">
+                <span class="meta-icon">📄</span>
+                <span id="modal-pages"></span> halaman
+              </span>
+              <span class="meta-item">
+                <span class="meta-icon">⭐</span>
+                <span id="modal-rating"></span>
+              </span>
+            </div>
+            <p class="modal-price" id="modal-price"></p>
+          </div>
+        </div>
+        <div class="modal-body">
+          <h3>Sinopsis</h3>
+          <p class="modal-description" id="modal-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Perpustakaan Digital. Dibuat dengan ❤️</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
