@@ -8,7 +8,7 @@ const books = [
     pages: 320,
     price: 98000,
     rating: 4.9,
-    image: "images/book1.jpg", // Ganti dengan path gambar kamu
+    image: "images/image.png", // Ganti dengan path gambar kamu
     description: "Sebuah buku yang memperkenalkan filsafat Stoisisme dalam konteks kehidupan modern di Indonesia.",
   },
   {
@@ -104,7 +104,7 @@ const books = [
     pages: 256,
     price: 110000,
     rating: 4.7,
-    image: "images/book9.jpg", // Ganti dengan path gambar kamu
+    image: "images/image copy.png", // Ganti dengan path gambar kamu
     description: "Penjelasan mengenai asal-usul alam semesta, lubang hitam, dan konsep waktu bagi pembaca awam.",
   },
   {

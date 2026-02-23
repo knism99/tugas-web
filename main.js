@@ -52,6 +52,7 @@ function createBookCard(book) {
     <div class="book-cover">
       <span class="book-genre ${book.genre}">${book.genre}</span>
       <span class="book-rating">⭐ ${book.rating}</span>
+      <img src="${book.image}" alt="" class="cover-image-bg" onerror="this.style.display='none';">
       <img src="${book.image}" alt="${book.title}" class="cover-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <span class="cover-icon" style="display: none;">${getBookIcon(book.genre)}</span>
     </div>
@@ -63,7 +64,7 @@ function createBookCard(book) {
         <span>📄 ${book.pages} hal</span>
       </div>
       <p class="book-price">${formatPrice(book.price)}</p>
-      <span class="view-detail">Lihat Detail →</span>
+      <span class="view-detail">Lihat Detail <span class="arrow">→</span></span>
     </div>
   `;
 
@@ -156,20 +157,15 @@ function openModal(book) {
     modalPrice.textContent = formatPrice(book.price);
     modalDescription.textContent = book.description;
 
-    // Update cover with image
+    // Update cover with image - same style as card cover
     modalCover.innerHTML = `
+    <img src="${book.image}" alt="" class="cover-image-bg" onerror="this.style.display='none';">
     <img src="${book.image}" alt="${book.title}" class="cover-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
     <span class="cover-icon" style="display: none;">${getBookIcon(book.genre)}</span>
   `;
 
-    // Update cover background based on genre
-    const genreGradients = {
-        'Fiction': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-        'Self-Help': 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-        'Sci-Fi': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        'History': 'linear-gradient(135deg, #f5576c 0%, #ff8a00 100%)'
-    };
-    modalCover.style.background = genreGradients[book.genre] || 'var(--primary-gradient)';
+    // Reset cover background so image fills fully
+    modalCover.style.background = 'transparent';
 
     // Show modal
     modalOverlay.classList.add('active');
