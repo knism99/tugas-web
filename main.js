@@ -18,7 +18,8 @@ const modalDescription = document.getElementById('modal-description');
 const modalCover = document.getElementById('modal-cover');
 
 // ===== State =====
-let currentBooks = [...books];
+let books = [];
+let currentBooks = [];
 
 // ===== Format Currency =====
 function formatPrice(price) {
@@ -28,17 +29,6 @@ function formatPrice(price) {
         minimumFractionDigits: 0,
         maximumFractionDigits: 0
     }).format(price);
-}
-
-// ===== Get Book Icon based on Genre =====
-function getBookIcon(genre) {
-    const icons = {
-        'Fiction': '📕',
-        'Self-Help': '📗',
-        'Sci-Fi': '📘',
-        'History': '📙'
-    };
-    return icons[genre] || '📖';
 }
 
 // ===== Create Book Card HTML =====
@@ -54,7 +44,6 @@ function createBookCard(book) {
       <span class="book-rating">⭐ ${book.rating}</span>
       <img src="${book.image}" alt="" class="cover-image-bg" onerror="this.style.display='none';">
       <img src="${book.image}" alt="${book.title}" class="cover-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <span class="cover-icon" style="display: none;">${getBookIcon(book.genre)}</span>
     </div>
     <div class="book-info">
       <h3 class="book-title">${book.title}</h3>
@@ -83,7 +72,6 @@ function renderBooks() {
     if (currentBooks.length === 0) {
         booksGrid.innerHTML = `
       <div class="empty-state" style="grid-column: 1 / -1;">
-        <div class="empty-icon">📚</div>
         <h3>Tidak ada buku ditemukan</h3>
         <p>Coba ubah filter atau kata kunci pencarian</p>
       </div>
@@ -160,9 +148,7 @@ function openModal(book) {
     // Update cover with image - same style as card cover
     modalCover.innerHTML = `
     <img src="${book.image}" alt="" class="cover-image-bg" onerror="this.style.display='none';">
-    <img src="${book.image}" alt="${book.title}" class="cover-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-    <span class="cover-icon" style="display: none;">${getBookIcon(book.genre)}</span>
-  `;
+    <img src="${book.image}" alt="${book.title}" class="cover-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">  `;
 
     // Reset cover background so image fills fully
     modalCover.style.background = 'transparent';
@@ -199,5 +185,14 @@ document.addEventListener('keydown', (e) => {
 
 // ===== Initialize =====
 document.addEventListener('DOMContentLoaded', () => {
-    applyFilterAndSort();
+    fetch('app.json')
+        .then(response => response.json())
+        .then(data => {
+            books = data;
+            currentBooks = [...books];
+            applyFilterAndSort();
+        })
+        .catch(error => {
+            console.error('JSON not loaded:', error);
+        });
 });
